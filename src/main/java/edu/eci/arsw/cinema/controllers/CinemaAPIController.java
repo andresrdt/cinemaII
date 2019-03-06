@@ -22,7 +22,7 @@ import edu.eci.arsw.cinema.persistence.CinemaPersitence;
 
 @RestController
 @Service
-@RequestMapping(value = "/cinema")
+
 public class CinemaAPIController {
 	@Autowired
 	private CinemaPersitence cp=null;
@@ -33,15 +33,27 @@ public class CinemaAPIController {
 		return cp;
 	}
 	
-	 
-@RequestMapping(method = RequestMethod.GET)
-public ResponseEntity<?> manejadorGetRecursoCinemaAPIController(){
-    try {
-        //obtener datos que se enviarán a través del API
-        return new ResponseEntity<>(cp.getAllCinemas(),HttpStatus.ACCEPTED);
-    } catch (Exception ex) {
-        Logger.getLogger(CinemaAPIController.class.getName()).log(Level.SEVERE, null, ex);
-        return new ResponseEntity<>("Error bla bla bla",HttpStatus.NOT_FOUND);
-    }        
-}
+	
+	@RequestMapping(value = "/cinema",method = RequestMethod.GET)
+	public ResponseEntity<?> manejadorGetRecursoCinemaAPIController(){
+	    try {
+	        //obtener datos que se enviarán a través del API
+	        return new ResponseEntity<>(cp.getAllCinemas(),HttpStatus.ACCEPTED);
+	    } catch (Exception ex) {
+	        Logger.getLogger(CinemaAPIController.class.getName()).log(Level.SEVERE, null, ex);
+	        return new ResponseEntity<>("Error no cinemas found",HttpStatus.NOT_FOUND);
+	    }        
+	}
+	
+	@RequestMapping(value="/cinema/{name}",method = RequestMethod.GET)
+	public ResponseEntity<?> getRecursosCinemaEspecifico(@PathVariable String name){
+		try {
+			
+	        return new ResponseEntity<>(cp.getCinema(name),HttpStatus.ACCEPTED);
+	    } catch (Exception ex) {
+	        Logger.getLogger(CinemaAPIController.class.getName()).log(Level.SEVERE, null, ex);
+	        return new ResponseEntity<>("Error "+ex.getMessage(),HttpStatus.NOT_FOUND);
+	    }    
+		
+	}
 }
