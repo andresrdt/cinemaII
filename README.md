@@ -16,5 +16,6 @@ belong to the data cinemas we specify.
 finally we test with an existing cinema:  
 ![](imagenes/cinemaWorking.PNG)  
 and with a cinema that does not exist we must get the 404 error:  
-![](imagenes/cinemaNotWorking.PNG)
+![](imagenes/cinemaNotWorking.PNG)  
+![](imagenes/cinemaNotWorking2.PNG)  
 
