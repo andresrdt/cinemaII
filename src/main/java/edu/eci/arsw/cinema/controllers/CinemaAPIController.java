@@ -17,6 +17,7 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
+import edu.eci.arsw.cinema.model.Cinema;
 import edu.eci.arsw.cinema.model.CinemaFunction;
 import edu.eci.arsw.cinema.model.Movie;
 import edu.eci.arsw.cinema.persistence.CinemaPersitence;
@@ -86,5 +87,29 @@ public class CinemaAPIController {
 	        return new ResponseEntity<>("Error 404 "+ex.getMessage(),HttpStatus.NOT_FOUND);
 	    }    
 		
+	}
+
+	@RequestMapping(value="/cinema/{name}",method = RequestMethod.POST)	
+	public ResponseEntity<?> manejadorPostRecursoCinema(@RequestBody CinemaFunction c,@PathVariable String name){
+	    try {
+	    	cp.getCinema(name).addFunction(c);
+	        return new ResponseEntity<>(HttpStatus.CREATED);
+	    } catch (Exception ex) {
+	        Logger.getLogger(CinemaAPIController.class.getName()).log(Level.SEVERE, null, ex);
+	        return new ResponseEntity<>("Error "+ex.getMessage(),HttpStatus.FORBIDDEN);            
+	    }        
+
+	}
+	@RequestMapping(value="/cinema/{name}",method = RequestMethod.PUT)	
+	public ResponseEntity<?> manejadorPutRecursoCinema(@RequestBody CinemaFunction c,@PathVariable String name){
+	    try {
+	    	cp.getCinema(name);
+	    	/// completar
+	        return new ResponseEntity<>(HttpStatus.CREATED);
+	    } catch (Exception ex) {
+	        Logger.getLogger(CinemaAPIController.class.getName()).log(Level.SEVERE, null, ex);
+	        return new ResponseEntity<>("Error "+ex.getMessage(),HttpStatus.FORBIDDEN);            
+	    }        
+
 	}
 }

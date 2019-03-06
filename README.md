@@ -33,5 +33,12 @@ and with incorrect data:
 ![](imagenes/movieIncorrect.PNG)  
 
 ## part 2
-
+now we set the post method:  
+![](imagenes/post.PNG)  
+and try to insert a new cinema function, in this case "Capitana marvel":  
+![](imagenes/postConsole.PNG)  
+then we check it was inserted correctly(the curl line used is on a file named functionToPost.txt):  
+![](imagenes/checkPost.PNG)  
+and then we check it with the url:  
+![](imagenes/checkURL.PNG)  
 
