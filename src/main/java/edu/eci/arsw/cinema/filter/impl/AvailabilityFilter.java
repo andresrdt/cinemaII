@@ -3,12 +3,16 @@ package edu.eci.arsw.cinema.filter.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
+
 import edu.eci.arsw.cinema.model.Cinema;
 import edu.eci.arsw.cinema.model.CinemaFunction;
 import edu.eci.arsw.cinema.model.Movie;
 import edu.eci.arsw.cinema.persistence.CinemaPersitence;
 import edu.eci.arsw.cinema.filter.Filter;
-
+@Service
+@Primary
 public class AvailabilityFilter implements Filter{
 
 	

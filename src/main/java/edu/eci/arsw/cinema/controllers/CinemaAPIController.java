@@ -10,6 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +32,7 @@ public class CinemaAPIController {
 	public CinemaPersitence getCp() {
 		return cp;
 	}
+	
 	 
 @RequestMapping(method = RequestMethod.GET)
 public ResponseEntity<?> manejadorGetRecursoCinemaAPIController(){

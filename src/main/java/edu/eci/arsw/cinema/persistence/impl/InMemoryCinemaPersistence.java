@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
  *
  * @author cristian
  */
-
+@Service
 public class InMemoryCinemaPersistence implements CinemaPersitence{
 	 @Autowired
 	 Filter fil=null;
