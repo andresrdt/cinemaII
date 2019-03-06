@@ -44,6 +44,7 @@ public class InMemoryCinemaPersistence implements CinemaPersitence{
     public InMemoryCinemaPersistence() {
         //load stub data
         String functionDate = "2018-12-18 15:30";
+        String functionDate2 = "2018-12-18 17:30";
         List<CinemaFunction> functions= new ArrayList<>();
         CinemaFunction funct1 = new CinemaFunction(new Movie("SuperHeroes Movie","Action"),functionDate);
         CinemaFunction funct2 = new CinemaFunction(new Movie("The Night","Horror"),functionDate);
@@ -55,14 +56,14 @@ public class InMemoryCinemaPersistence implements CinemaPersitence{
         cinemas.put("cinemaX", c);
         functions=new ArrayList<>();
         CinemaFunction funct4 = new CinemaFunction(new Movie("La monja","Horror"),functionDate);
-        CinemaFunction funct5 = new CinemaFunction(new Movie("Avengers Infinity war","Action"),functionDate);
+        CinemaFunction funct5 = new CinemaFunction(new Movie("Avengers Infinity war","Action"),functionDate2);
         functions.add(funct4);
         functions.add(funct5);
         c=new Cinema("cineColombia",functions);
         cinemas.put("cineColombia", c);
         functions=new ArrayList<>();
         CinemaFunction funct6 = new CinemaFunction(new Movie("Miedo","Horror"),functionDate);
-        CinemaFunction funct7 = new CinemaFunction(new Movie("Spider Man","Action"),functionDate);
+        CinemaFunction funct7 = new CinemaFunction(new Movie("Spider Man","Action"),functionDate2);
         functions.add(funct6);
         functions.add(funct7);
         c=new Cinema("cineMark",functions);
@@ -93,6 +94,7 @@ public class InMemoryCinemaPersistence implements CinemaPersitence{
         		functions.add(cf);
         	}
         }
+        if(functions.isEmpty()) throw new CinemaPersistenceException("no se encontraron funciones con los parametros dados");
         return functions;
     }
 

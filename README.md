@@ -17,5 +17,21 @@ finally we test with an existing cinema:
 ![](imagenes/cinemaWorking.PNG)  
 and with a cinema that does not exist we must get the 404 error:  
 ![](imagenes/cinemaNotWorking.PNG)  
-![](imagenes/cinemaNotWorking2.PNG)  
+now we implement it with date:  
+![](imagenes/dateImpl.PNG)  
+and try it with correct data:  
+![](imagenes/DateCorrect1.PNG)  
+![](imagenes/DateCorrect2.PNG)  
+and with incorrect data:  
+![](imagenes/DateIncorrect2.PNG)  
+
+and finally we do the same with the movie name:  
+![](imagenes/movieImpl.PNG)  
+try it with correct data:  
+![](imagenes/movieCorrect.PNG)  
+and with incorrect data:
+![](imagenes/movieIncorrect.PNG)  
+
+## part 2
+
 
